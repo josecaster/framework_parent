@@ -9,4 +9,5 @@
 	<changeSet onValidationFail="MARK_RAN" id="data_privilege_4" author="simple.solutions"><customChange class="software.simple.solutions.framework.core.liquibase.DataPrivilege"><param name="id"><![CDATA[4]]></param><param name="privilege"><![CDATA[DELETE]]></param><param name="roleId"><![CDATA[system.privilege.delete]]></param></customChange></changeSet>
 	<changeSet onValidationFail="MARK_RAN" id="data_privilege_5" author="simple.solutions"><customChange class="software.simple.solutions.framework.core.liquibase.DataPrivilege"><param name="id"><![CDATA[5]]></param><param name="privilege"><![CDATA[PERSON_SHOW_GENDER]]></param><param name="roleId"><![CDATA[system.privilege.person.show.gender]]></param></customChange></changeSet>
 	<changeSet onValidationFail="MARK_RAN" id="data_privilege_6" author="simple.solutions"><customChange class="software.simple.solutions.framework.core.liquibase.DataPrivilege"><param name="id"><![CDATA[6]]></param><param name="privilege"><![CDATA[PERSON_SHOW_DOB]]></param><param name="roleId"><![CDATA[system.privilege.person.show.dob]]></param></customChange></changeSet>
+	
 </databaseChangeLog>

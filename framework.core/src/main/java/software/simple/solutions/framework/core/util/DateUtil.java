@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
@@ -164,6 +166,15 @@ public class DateUtil {
 
 	public static String dateToString(Date date, SimpleDateFormat formatter) {
 		return formatter.format(date);
+	}
+	
+	public static String dateToString(LocalDateTime date, SimpleDateFormat formatter) {
+		return formatter.format(date);
+	}
+	
+	public static String dateToString(LocalTime date, SimpleDateFormat formatter) {
+		DateTimeFormatter format = DateTimeFormatter.ISO_TIME; 
+		return format.format(date);
 	}
 
 	public static Date truncDate(Date date) {

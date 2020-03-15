@@ -9,7 +9,7 @@ import com.vaadin.flow.server.VaadinSession;
 import software.simple.solutions.framework.core.constants.Constants;
 import software.simple.solutions.framework.core.util.SessionHolder;
 
-@Route(value = "", layout = MainView.class)
+//@Route(value = "", layout = MainView.class)
 public class HomeView extends VerticalLayout implements BeforeEnterObserver {
 
 	private static final long serialVersionUID = 4918285431578284653L;

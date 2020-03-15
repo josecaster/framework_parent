@@ -205,12 +205,12 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 		removeAll();
 		Route route = this.getClass().getAnnotation(Route.class);
 		String path = route.value();
-
-		Long menuId = getSessionHolder().getRouteMenu(path);
-		MenuServiceFacade menuServiceFacade = MenuServiceFacade.get(UI.getCurrent());
-		Menu menu = menuServiceFacade.getById(Menu.class, menuId);
-		getViewDetail().setMenu(menu);
-
+		if (getViewDetail().getMenu() == null) {
+			Long menuId = getSessionHolder().getRouteMenu(path);
+			MenuServiceFacade menuServiceFacade = MenuServiceFacade.get(UI.getCurrent());
+			Menu menu = menuServiceFacade.getById(Menu.class, menuId);
+			getViewDetail().setMenu(menu);
+		}
 		executePreBuild();
 
 		setUpTemplateLayout();
@@ -344,8 +344,15 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 			privileges = RoleViewPrivilegeServiceFacade.get(UI.getCurrent()).getPrivilegesByViewIdAndUserId(
 					getViewDetail().getMenu().getView().getId(), getSessionHolder().getApplicationUser().getId());
 		} else {
-			privileges = RoleViewPrivilegeServiceFacade.get(UI.getCurrent()).getPrivilegesByViewIdAndRoleId(
-					getViewDetail().getMenu().getView().getId(), getSessionHolder().getSelectedRole().getId());
+			System.out.println(UI.getCurrent());
+			RoleViewPrivilegeServiceFacade roleViewPrivilegeServiceFacade = RoleViewPrivilegeServiceFacade
+					.get(UI.getCurrent());
+			ViewDetail viewDetail = getViewDetail();
+			Menu menu = viewDetail.getMenu();
+			View view = menu.getView();
+			Long id = view.getId();
+			privileges = roleViewPrivilegeServiceFacade.getPrivilegesByViewIdAndRoleId(id,
+					getSessionHolder().getSelectedRole().getId());
 		}
 
 		// ActionState actionState =
@@ -529,6 +536,7 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 				// formBtn.addStyleName(ValoTheme.BUTTON_SMALL);
 				// formBtn.addStyleName(ValoTheme.BUTTON_ICON_ONLY);
 				// formBtn.addStyleName(Style.RESIZED_ICON);
+<<<<<<< HEAD
 				formBtn.addClickListener(new BasicTemplate.FormSetup(source));
 				// formBtn.addClickListener(new
 				// ComponentEventListener<ClickEvent<Button>>() {
@@ -544,6 +552,19 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 				// QueryParameters.simple(parameters));
 				// }
 				// });
+=======
+//				formBtn.addClickListener(new BasicTemplate.FormSetup(source));
+				formBtn.addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
+
+					@Override
+					public void onComponentEvent(ClickEvent<Button> event) {
+						Map<String, String> parameters = new ConcurrentHashMap<String, String>();
+						parameters.put("edit", "true");
+//						RouteConfiguration.forSessionScope().getUrl(navigationTarget);
+						UI.getCurrent().navigate(editRoute, QueryParameters.simple(parameters));
+					}
+				});
+>>>>>>> master
 				return formBtn;
 			}
 		});
@@ -618,6 +639,7 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 
 		contentGrid = setUpGrid();
 		filterAndResultLayout.add(contentGrid);
+		System.out.println(filterAndResultLayout.isVisible());
 		// filterAndResultLayout.setExpandRatio(contentGrid, 1f);
 
 	}

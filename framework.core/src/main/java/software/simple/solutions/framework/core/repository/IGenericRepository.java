@@ -2,6 +2,7 @@ package software.simple.solutions.framework.core.repository;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -75,8 +76,6 @@ public interface IGenericRepository extends Serializable {
 
 	<T> PagingResult<T> findBySearch(Object o, PagingSetting pagingSetting) throws FrameworkException;
 
-	Long countForSearch(String query) throws FrameworkException;
-
 	Long countForNativeSearch(String query) throws FrameworkException;
 
 	<T, R> List<R> getForListing(Class<T> cl) throws FrameworkException;
@@ -109,5 +108,7 @@ public interface IGenericRepository extends Serializable {
 	Property getBypropertyKey(Class<Property> class1, String key) throws FrameworkException;
 
 	JoinLeftBuilder createJoinBuilder(Object o, CriteriaBuilder criteriaBuilder) throws FrameworkException;
+
+	Long countForSearch(String query, ConcurrentHashMap<String, Object> map) throws FrameworkException;
 
 }

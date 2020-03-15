@@ -31,7 +31,7 @@ public abstract class MappedSuperClass implements Serializable, IMappedSuperClas
 	}
 
 	@Transient
-	private String uuId;
+	protected String uuId;
 
 	// @Column(name = UPDATED_DATE_)
 	@Transient
@@ -133,5 +133,15 @@ public abstract class MappedSuperClass implements Serializable, IMappedSuperClas
 			return false;
 		return true;
 	}
+
+	public String getUuId() {
+		return uuId;
+	}
+
+	public void setUuId(String uuId) {
+		this.uuId = uuId;
+	}
+	
+	
 
 }

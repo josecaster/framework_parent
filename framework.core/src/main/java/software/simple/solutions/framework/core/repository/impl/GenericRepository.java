@@ -643,7 +643,7 @@ public class GenericRepository implements IGenericRepository {
 			return null;
 		}
 
-		ConcurrentMap<String, Object> paramMap = new ConcurrentHashMap<String, Object>();
+		ConcurrentHashMap<String, Object> paramMap = new ConcurrentHashMap<String, Object>();
 		String query = createSearchQuery(o, paramMap, pagingSetting);
 
 		PagingResult<T> pagingResult = new PagingResult<T>();
@@ -653,7 +653,7 @@ public class GenericRepository implements IGenericRepository {
 			pagingSetting.setQuery(query);
 
 			// if (pagingSetting.isDoCount()) {
-			Long count = countForSearch(query);
+			Long count = countForSearch(query, paramMap);
 			pagingResult.setCount(count);
 			// }
 
@@ -703,11 +703,10 @@ public class GenericRepository implements IGenericRepository {
 	}
 
 	@Override
-	public Long countForSearch(String query) throws FrameworkException {
+	public Long countForSearch(String query, ConcurrentHashMap<String, Object> paramMap) throws FrameworkException {
 		if (query == null || query.trim().isEmpty()) {
 			return null;
 		}
-		ConcurrentMap<String, Object> paramMap = new ConcurrentHashMap<String, Object>();
 		Pattern pattern = Pattern.compile("(?i)\\bfrom\\b");
 		Matcher matcher = pattern.matcher(query);
 		if (matcher.find()) {
