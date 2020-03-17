@@ -66,14 +66,14 @@ import software.simple.solutions.framework.core.web.flow.applayout.CustomLeftCli
 import software.simple.solutions.framework.core.web.flow.applayout.CustomLeftSubMenuBuilder;
 import software.simple.solutions.framework.core.web.flow.applayout.CustomLeftSubmenu;
 
-<<<<<<< HEAD
-@Push
-@PreserveOnRefresh
-=======
+//<<<<<<< HEAD
+//@Push
+//@PreserveOnRefresh
+//=======
 //@Push
 //@PreserveOnRefresh
 //@CssImport(value = "styles/paging-combobox.css", themeFor = "vaadin-combo-box")
->>>>>>> master
+//>>>>>>> master
 public class MainView extends AppLayoutRouterLayout
 // implements BeforeEnterObserver
 {

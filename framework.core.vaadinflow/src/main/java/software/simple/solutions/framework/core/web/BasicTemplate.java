@@ -536,8 +536,7 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 				// formBtn.addStyleName(ValoTheme.BUTTON_SMALL);
 				// formBtn.addStyleName(ValoTheme.BUTTON_ICON_ONLY);
 				// formBtn.addStyleName(Style.RESIZED_ICON);
-<<<<<<< HEAD
-				formBtn.addClickListener(new BasicTemplate.FormSetup(source));
+//				formBtn.addClickListener(new BasicTemplate.FormSetup(source));
 				// formBtn.addClickListener(new
 				// ComponentEventListener<ClickEvent<Button>>() {
 				//
@@ -552,7 +551,6 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 				// QueryParameters.simple(parameters));
 				// }
 				// });
-=======
 //				formBtn.addClickListener(new BasicTemplate.FormSetup(source));
 				formBtn.addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
 
@@ -564,7 +562,6 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 						UI.getCurrent().navigate(editRoute, QueryParameters.simple(parameters));
 					}
 				});
->>>>>>> master
 				return formBtn;
 			}
 		});
