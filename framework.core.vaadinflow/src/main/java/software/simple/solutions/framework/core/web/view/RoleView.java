@@ -17,7 +17,7 @@ import software.simple.solutions.framework.core.web.flow.MainView;
 import software.simple.solutions.framework.core.web.routing.Routes;
 import software.simple.solutions.framework.core.web.view.forms.RoleForm;
 
-@Route(value = Routes.ROLE, layout = MainView.class)
+//@Route(value = Routes.ROLE, layout = MainView.class)
 public class RoleView extends BasicTemplate<Role> {
 
 	private static final long serialVersionUID = 6503015064562511801L;

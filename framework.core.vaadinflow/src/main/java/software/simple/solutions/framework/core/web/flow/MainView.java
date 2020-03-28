@@ -66,16 +66,7 @@ import software.simple.solutions.framework.core.web.flow.applayout.CustomLeftCli
 import software.simple.solutions.framework.core.web.flow.applayout.CustomLeftSubMenuBuilder;
 import software.simple.solutions.framework.core.web.flow.applayout.CustomLeftSubmenu;
 
-//<<<<<<< HEAD
-//@Push
-//@PreserveOnRefresh
-//=======
-//@Push
-//@PreserveOnRefresh
-//@CssImport(value = "styles/paging-combobox.css", themeFor = "vaadin-combo-box")
-//>>>>>>> master
-public class MainView extends AppLayoutRouterLayout
-// implements BeforeEnterObserver
+public class MainView 
 {
 	private static final long serialVersionUID = -7975431980465425663L;
 
@@ -316,7 +307,7 @@ public class MainView extends AppLayoutRouterLayout
 		LeftMenuComponentWrapper leftAppMenuBuilder = (LeftMenuComponentWrapper) LeftAppMenuBuilder.get().build();
 		leftResponsive = AppLayoutBuilder.get(LeftLayouts.Left.class).withTitle(title).withAppBar(flexLayout)
 				.withAppMenu(leftAppMenuBuilder).build();
-		init(leftResponsive);
+//		init(leftResponsive);
 
 		loginSuccessfullObserver.subscribe(new Consumer<Boolean>() {
 
@@ -530,16 +521,16 @@ public class MainView extends AppLayoutRouterLayout
 		return userMenuDiv;
 	}
 
-	@Override
-	public void showRouterLayoutContent(HasElement content) {
-		SessionHolder sessionHolder = (SessionHolder) VaadinSession.getCurrent().getAttribute(Constants.SESSION_HOLDER);
-		if (sessionHolder == null || sessionHolder.getApplicationUser() == null) {
-			getContent().getElement().appendChild(content.getElement());
-			leftResponsive.setVisible(false);
-		} else {
-			leftResponsive.setVisible(true);
-			super.showRouterLayoutContent(content);
-		}
-	}
+//	@Override
+//	public void showRouterLayoutContent(HasElement content) {
+//		SessionHolder sessionHolder = (SessionHolder) VaadinSession.getCurrent().getAttribute(Constants.SESSION_HOLDER);
+//		if (sessionHolder == null || sessionHolder.getApplicationUser() == null) {
+//			getContent().getElement().appendChild(content.getElement());
+//			leftResponsive.setVisible(false);
+//		} else {
+//			leftResponsive.setVisible(true);
+//			super.showRouterLayoutContent(content);
+//		}
+//	}
 
 }

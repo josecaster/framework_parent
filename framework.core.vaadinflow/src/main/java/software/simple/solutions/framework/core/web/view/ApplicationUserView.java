@@ -56,7 +56,7 @@ import software.simple.solutions.framework.core.web.lookup.PersonLookUpField;
 import software.simple.solutions.framework.core.web.routing.Routes;
 import software.simple.solutions.framework.core.web.view.forms.ApplicationUserForm;
 
-@Route(value = Routes.APPLICATION_USER, layout = MainView.class)
+//@Route(value = Routes.APPLICATION_USER, layout = MainView.class)
 public class ApplicationUserView extends BasicTemplate<ApplicationUser> {
 
 	private static final long serialVersionUID = 6503015064562511801L;

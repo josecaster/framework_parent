@@ -32,7 +32,7 @@ import software.simple.solutions.framework.core.web.components.CTextField;
 import software.simple.solutions.framework.core.web.flow.MainView;
 import software.simple.solutions.framework.core.web.routing.Routes;
 
-@Route(value = Routes.PERSON, layout = MainView.class)
+//@Route(value = Routes.PERSON, layout = MainView.class)
 @SupportedPrivileges(extraPrivileges = { Privileges.PERSON_SHOW_GENDER, Privileges.PERSON_SHOW_DOB })
 public class PersonView extends BasicTemplate<Person> {
 

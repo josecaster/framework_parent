@@ -44,7 +44,7 @@ import software.simple.solutions.framework.core.web.routing.Routes;
 /**
  * The main view contains a button and a click listener.
  */
-@Route(value = Routes.LOGIN, layout = MainView.class)
+//@Route(value = Routes.LOGIN, layout = MainView.class)
 @CssImport(value = "./styles/shared-styles.css")
 public class LoginView extends FlexLayout implements BeforeEnterObserver {
 

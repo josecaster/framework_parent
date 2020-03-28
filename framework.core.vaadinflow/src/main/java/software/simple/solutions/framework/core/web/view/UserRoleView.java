@@ -21,7 +21,7 @@ import software.simple.solutions.framework.core.web.lookup.RoleLookUpField;
 import software.simple.solutions.framework.core.web.routing.Routes;
 import software.simple.solutions.framework.core.web.view.forms.UserRoleForm;
 
-@Route(value = Routes.USER_ROLE, layout = MainView.class)
+//@Route(value = Routes.USER_ROLE, layout = MainView.class)
 public class UserRoleView extends BasicTemplate<UserRole> {
 
 	private static final long serialVersionUID = 6503015064562511801L;

@@ -35,7 +35,7 @@ public class UserRoleRepository extends GenericRepository implements IUserRoleRe
 			return null;
 		}
 		ConcurrentMap<String, Object> paramMap = createParamMap();
-		String query = "select ur from UserRole ur where ur.applicationUser.id=:userId and ur.role.id=:roleId";
+		String query = "select ur from UserRole ur where ur.applicationUser.id=:userId and ur.role.id=:roleId order by ur.role.roleCategory.id";
 		paramMap.put("userId", userId);
 		paramMap.put("roleId", roleId);
 		return getByQuery(query, paramMap);
