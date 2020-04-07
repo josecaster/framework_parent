@@ -291,7 +291,7 @@ public class ApplicationUserForm extends FormView {
 		passwordFld.setVisible(true);
 		confirmPasswordFld.setVisible(true);
 		managePasswordBtn.setVisible(false);
-
+		usernameFld.setReadOnly(false);
 		useLdapFld.addClickListener(new ComponentEventListener<ClickEvent<Checkbox>>() {
 
 			private static final long serialVersionUID = 5305893476437089439L;

@@ -204,8 +204,8 @@ public abstract class BasicTemplate<T> extends AbstractBaseView implements GridT
 	public void executeBuild() throws FrameworkException {
 		removeAll();
 		Route route = this.getClass().getAnnotation(Route.class);
-		String path = route.value();
-		if (getViewDetail().getMenu() == null) {
+		if (getViewDetail().getMenu() == null && route != null) {
+			String path = route.value();
 			Long menuId = getSessionHolder().getRouteMenu(path);
 			MenuServiceFacade menuServiceFacade = MenuServiceFacade.get(UI.getCurrent());
 			Menu menu = menuServiceFacade.getById(Menu.class, menuId);

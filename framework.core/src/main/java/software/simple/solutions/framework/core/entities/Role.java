@@ -10,8 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SelectBeforeUpdate;
 import org.hibernate.envers.AuditOverride;
@@ -30,7 +28,6 @@ import software.simple.solutions.framework.core.properties.RoleProperty;
 public class Role extends MappedSuperClass {
 
 	private static final long serialVersionUID = -1706327040874057627L;
-	private static final Logger logger = LogManager.getLogger(Role.class);
 
 	@Id
 	@TableGenerator(name = "table", table = "sequences_", pkColumnName = "PK_NAME", valueColumnName = "PK_VALUE", initialValue = 1000000)
@@ -119,6 +116,11 @@ public class Role extends MappedSuperClass {
 		}
 
 		return caption.toString();
+	}
+
+	@Override
+	public String toString() {
+		return name;
 	}
 
 }

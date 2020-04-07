@@ -25,6 +25,7 @@ public class SessionHolder implements Serializable {
 	private String password;
 	private ConcurrentMap<String, Long> routesMenus;
 	private String forwardTo;
+	private boolean claimToBeAuthorized = false;
 
 	public SessionHolder() {
 		super();
@@ -126,6 +127,14 @@ public class SessionHolder implements Serializable {
 
 	public void setForwardTo(String forwardTo) {
 		this.forwardTo = forwardTo;
+	}
+
+	public boolean isClaimToBeAuthorized() {
+		return claimToBeAuthorized;
+	}
+
+	public void setClaimToBeAuthorized(boolean claimToBeAuthorized) {
+		this.claimToBeAuthorized = claimToBeAuthorized;
 	}
 
 }

@@ -9,12 +9,26 @@ import org.springframework.stereotype.Repository;
 import software.simple.solutions.framework.core.entities.Role;
 import software.simple.solutions.framework.core.entities.UserRole;
 import software.simple.solutions.framework.core.exceptions.FrameworkException;
+import software.simple.solutions.framework.core.pojo.PagingSetting;
 import software.simple.solutions.framework.core.repository.IUserRoleRepository;
+import software.simple.solutions.framework.core.valueobjects.UserRoleVO;
 
 @Repository
 public class UserRoleRepository extends GenericRepository implements IUserRoleRepository {
 
 	public static final String FIND_ROLES_BY_USER = "findRolesByUser";
+	
+	@Override
+	public String createSearchQuery(Object o, ConcurrentMap<String, Object> paramMap, PagingSetting pagingSetting)
+			throws FrameworkException {
+		UserRoleVO roleVO = new UserRoleVO();
+		String query = "from UserRole ur where 1=1 ";
+		if(roleVO.getUserId() != null) {
+			query+= " ur.applicationUser.id = :user";
+			paramMap.put("user", roleVO.getUserId());
+		}
+		return query;
+	}
 
 	@Override
 	public List<Role> findRolesByUser(Long id) throws FrameworkException {

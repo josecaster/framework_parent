@@ -164,4 +164,10 @@ public class ApplicationUser extends MappedSuperClass {
 			useLdap = true;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return username;
+	}
+	
 }

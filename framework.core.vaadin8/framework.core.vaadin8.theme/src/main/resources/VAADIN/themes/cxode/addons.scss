@@ -5,8 +5,13 @@
 @import "../../../VAADIN/addons/searchdropdown/searchdropdown.scss";
 
 
+/* Provided by wt-pdf-viewer-1.0.8.jar */
+@import "../../../VAADIN/themes/wtpdfviewer/wtpdfviewer.scss";
+
+
 /* Import and include this mixin into your project theme to include the addon themes */
 @mixin addons {
 	@include searchdropdown;
+	@include wtpdfviewer;
 }
 

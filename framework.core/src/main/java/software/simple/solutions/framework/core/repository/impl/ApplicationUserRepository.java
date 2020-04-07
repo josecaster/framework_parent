@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import software.simple.solutions.framework.core.entities.ApplicationUser;
 import software.simple.solutions.framework.core.exceptions.FrameworkException;
+import software.simple.solutions.framework.core.pojo.PagingSetting;
 import software.simple.solutions.framework.core.repository.IApplicationUserRepository;
 
 @Repository
@@ -57,6 +58,12 @@ public class ApplicationUserRepository extends GenericRepository implements IApp
 			entityManager.remove(t);
 		}
 		return entities.size();
+	}
+	
+	@Override
+	public String createSearchQuery(Object o, ConcurrentMap<String, Object> paramMap, PagingSetting pagingSetting)
+			throws FrameworkException {
+		return "from ApplicationUser";
 	}
 
 	@Override

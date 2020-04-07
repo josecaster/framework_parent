@@ -77,9 +77,9 @@ public class ApplicationUserService extends SuperService implements IApplication
 	public <T, R extends SuperVO> T updateSingle(R entityVO) throws FrameworkException {
 		ApplicationUserVO vo = (ApplicationUserVO) entityVO;
 
-		if (vo.getPersonId() == null) {
-			throw new FrameworkException(SystemMessageProperty.FIELD_IS_REQUIRED, new Arg().key(PersonProperty.PERSON));
-		}
+//		if (vo.getPersonId() == null) {
+//			throw new FrameworkException(SystemMessageProperty.FIELD_IS_REQUIRED, new Arg().key(PersonProperty.PERSON));
+//		}
 		if (StringUtils.isBlank(vo.getUsername())) {
 			throw new FrameworkException(SystemMessageProperty.FIELD_IS_REQUIRED,
 					new Arg().key(ApplicationUserProperty.USERNAME));
