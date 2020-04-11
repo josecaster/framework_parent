@@ -144,7 +144,7 @@
 	</dependencyManagement>
 	<modules>
 		<module>framework.core</module>
-		<module>framework.core.vaadin8</module>
-		<module>framework.core.vaadinflow</module>
+		<!-- <module>framework.core.vaadin8</module>
+		<module>framework.core.vaadinflow</module> -->
 	</modules>
 </project>
