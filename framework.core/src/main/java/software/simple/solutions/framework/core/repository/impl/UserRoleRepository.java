@@ -17,14 +17,14 @@ import software.simple.solutions.framework.core.valueobjects.UserRoleVO;
 public class UserRoleRepository extends GenericRepository implements IUserRoleRepository {
 
 	public static final String FIND_ROLES_BY_USER = "findRolesByUser";
-	
+
 	@Override
 	public String createSearchQuery(Object o, ConcurrentMap<String, Object> paramMap, PagingSetting pagingSetting)
 			throws FrameworkException {
-		UserRoleVO roleVO = new UserRoleVO();
+		UserRoleVO roleVO = (UserRoleVO) o;
 		String query = "from UserRole ur where 1=1 ";
-		if(roleVO.getUserId() != null) {
-			query+= " ur.applicationUser.id = :user";
+		if (roleVO.getUserId() != null) {
+			query += " and ur.applicationUser.id = :user";
 			paramMap.put("user", roleVO.getUserId());
 		}
 		return query;
