@@ -1,10 +1,13 @@
 package software.simple.solutions.framework.core.valueobjects;
 
+import java.util.List;
+
 public class ConfigurationVO extends SuperVO {
 
 	private static final long serialVersionUID = -2008276944089219114L;
 
 	private Long id;
+	private List<String> codes;
 	private String code;
 	private String name;
 	private String value;
@@ -57,6 +60,14 @@ public class ConfigurationVO extends SuperVO {
 
 	public void setByteValue(byte[] byteValue) {
 		this.byteValue = byteValue;
+	}
+
+	public void setCodes(List<String> codes) {
+		this.codes = codes;
+	}
+
+	public List<String> getCodes() {
+		return codes;
 	}
 
 }
